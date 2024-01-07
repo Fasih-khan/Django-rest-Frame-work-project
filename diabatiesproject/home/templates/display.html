@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{%block start%}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Pregnancies</th>
+        <th scope="col">Glucose</th>
+        <th scope="col">BloodPressure</th>
+        <th scope="col">SkinThickness</th>
+        <th scope="col">Insulin</th>
+        <th scope="col">BMI</th>
+        <th scope="col">DiabetesPedigreeFunction</th>
+        <th scope="col">Age</th>
+         <th scope="col">Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for results in results %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{results.Pregnancies}}</td>
+        <td>{{results.Glucose}}</td>
+        <td>{{results.BloodPressure}}</td>
+        <td>{{results.SkinThickness}}</td>
+        <td>{{results.Insulin}}</td>
+        <td>{{results.BMI}}</td>
+        <td>{{results.DiabetesPedigreeFunction}}</td>
+        <td>{{results.Age}}</td>
+        <td>{{results.Outcome}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock %}

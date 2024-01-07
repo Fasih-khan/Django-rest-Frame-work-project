@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{%block start%}
+
+    <div class="testbox">
+        <form method='GET' >
+        <div class="banner">
+            <h1>Enter Records you want to search</h1>
+        </div>
+        <div class="item">
+            <p>Glucose</p>
+            <div class="name-item">
+            <input type="number" name="Glucose" placeholder="Glucose" required/>
+            </div>
+        </div>
+        <div class="item">
+            <p>BMI</p>
+            <div class="name-item">
+            <input type="number" step="0.1" name="BMI" placeholder="BMI" required/>
+            </div>
+        </div>
+        <div class="item">
+            <p>Age</p>
+            <div class="name-item">
+            <input type="number" name="Age" placeholder="Age" required/>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button type="submit" href="/">Search</button>
+        </div>
+        </form>
+  </div>
+
+
+<div align='center'>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Pregnancies</th>
+        <th scope="col">Glucose</th>
+        <th scope="col">BloodPressure</th>
+        <th scope="col">SkinThickness</th>
+        <th scope="col">Insulin</th>
+        <th scope="col">BMI</th>
+        <th scope="col">DiabetesPedigreeFunction</th>
+        <th scope="col">Age</th>
+         <th scope="col">Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for results in results %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{results.Pregnancies}}</td>
+        <td>{{results.Glucose}}</td>
+        <td>{{results.BloodPressure}}</td>
+        <td>{{results.SkinThickness}}</td>
+        <td>{{results.Insulin}}</td>
+        <td>{{results.BMI}}</td>
+        <td>{{results.DiabetesPedigreeFunction}}</td>
+        <td>{{results.Age}}</td>
+        <td>{{results.Outcome}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+  <div>
+
+{% endblock %}
