@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{%block start%}
+
+    <div class="testbox">
+        <form method='GET' >
+        <div class="item">
+            <h2> Enter Glucose Range: </h2>
+            <p>Minimum Glucose Value</p>
+            <div class="name-item">
+            <input type="number" name="min_glucose" placeholder="Minimum Glucose" required/>
+            </div>
+        </div>
+        <div class="item">
+            <p>Maximum Glucose Value</p>
+            <div class="name-item">
+            <input type="number" name="max_glucose" placeholder="Maximum Glucose" required/>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button type="submit" href="/">Delete</button>
+        </div>
+        </form>
+  </div>
+
+
+<div align='center'>
+    <h1>{{results.msg}}</h1>
+ 
+  <div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{%block start%}
+
+    <div class="testbox">
+        <form method="POST" enctype = "multipart/form-data" >
+          {% csrf_token %}
+        <div class="banner">
+            <h1>Update Outcome</h1>
+        </div>
+
+        {% comment %} <div class="item">
+          <p>Pregnancies</p>
+          <div class="name-item">
+          <input type="number" name="Pregnancies" value="{{results.Pregnancies}}" required/>
+          </div>
+      </div>
+
+        <div class="item">
+            <p>Glucose</p>
+            <div class="name-item">
+            <input type="number" name="Glucose" value="{{results.Glucose}}" required/>
+            </div>
+        </div>
+
+        <div class="item">
+          <p>Blood Pressure</p>
+          <div class="name-item">
+          <input type="number" name="BloodPressure" value="{{results.BloodPressure}}" required/>
+          </div>
+      </div>
+      <div class="item">
+        <p>Skin Thickness</p>
+        <div class="name-item">
+        <input type="number" name="SkinThickness" value="{{results.SkinThickness}}" required/>
+        </div>
+    </div>
+    <div class="item">
+      <p>Insulin</p>
+      <div class="name-item">
+      <input type="number" name="Insulin" value="{{results.Insulin}}" required/>
+      </div>
+  </div>
+        <div class="item">
+            <p>BMI</p>
+            <div class="name-item">
+            <input type="number" step="0.1" name="BMI" value="{{results.BMI}}" required/>
+            </div>
+        </div>
+        <div class="item">
+          <p>DiabetesPedigreeFunction</p>
+          <div class="name-item">
+          <input type="number"  name="DiabetesPedigreeFunction" value="{{results.DiabetesPedigreeFunction}}" required/>
+          </div>
+      </div> 
+        <div class="item">
+            <p>Age</p>
+            <div class="name-item">
+            <input type="number" name="Age" value="{{results.Age}}" required/>
+            </div>
+        </div> {% endcomment %}
+        <div class="item" >
+          <p> Outcome </p>
+          <select name="Outcome"  >
+              <option value="0">0</option>
+              <option value="1">1</option>
+            </select>
+      </div>
+        <div class="btn">
+            <button type="submit" href="/">update</button>
+        </div>
+        </form>
+  </div>
+
+
+
+{% endblock %}

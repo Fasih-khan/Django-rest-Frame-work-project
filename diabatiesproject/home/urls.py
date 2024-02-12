@@ -1,5 +1,4 @@
 """diabatiesproject URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
@@ -17,9 +16,17 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import *
 urlpatterns = [
-path('api/diabetes-records',home),
+path('api/diabetes-records',home, name='home'),
 #path('api/diabetes-records/<Glucose>/<BMI>/<Age>',home1),
 
-path('add/',getdata)
+path('add/',getdata),
+path('api/diabetes-records/by-outcome',byOutcome, name='byOutcome'),
+path('api/diabetes-records/by-age-range',byAgeRange, name='byAgeRange'),
+path('api/diabetes-records/by-bmi-category',byBmiCategory, name='byBmiCategory'),
+path('api/diabetes-records/update-outcome',listOutcome, name='listOutcome'),
+path('api/diabetes-records/update-outcome/update/<Pregnancies>/<Glucose>/<BloodPressure>/<SkinThickness>/<Insulin>/<BMI>/<DiabetesPedigreeFunction>/<Age>/<Outcome>',updateOutcome,name='updateOutcome'),
+path('api/diabetes-records/by-glucose-range',byGlucoseRange,name='byGlucoseRange'),
+
+
 
 ]

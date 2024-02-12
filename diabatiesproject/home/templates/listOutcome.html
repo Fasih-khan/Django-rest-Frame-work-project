@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{%block start%}
+
+<div align='center'>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Pregnancies</th>
+        <th scope="col">Glucose</th>
+        <th scope="col">BloodPressure</th>
+        <th scope="col">SkinThickness</th>
+        <th scope="col">Insulin</th>
+        <th scope="col">BMI</th>
+        <th scope="col">DiabetesPedigreeFunction</th>
+        <th scope="col">Age</th>
+         <th scope="col">Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for results in results %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{results.Pregnancies}}</td>
+        <td>{{results.Glucose}}</td>
+        <td>{{results.BloodPressure}}</td>
+        <td>{{results.SkinThickness}}</td>
+        <td>{{results.Insulin}}</td>
+        <td>{{results.BMI}}</td>
+        <td>{{results.DiabetesPedigreeFunction}}</td>
+        <td>{{results.Age}}</td>
+        <td>{{results.Outcome}}</td>
+        <td>
+          <a href="/api/diabetes-records/update-outcome/update/{{results.Pregnancies}}/{{results.Glucose}}/{{results.BloodPressure}}/{{results.SkinThickness}}/{{results.Insulin}}/{{results.BMI}}/{{results.DiabetesPedigreeFunction}}/{{results.Age}}/{{results.Outcome}}"class="btn-btn-primary">Update</a> 
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+  <div>
+
+{% endblock %}

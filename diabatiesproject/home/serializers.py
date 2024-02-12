@@ -3,5 +3,5 @@ from .models import *
 class DiabatiesSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Diabaties
+        model = Diabetes
         fields = '__all__'

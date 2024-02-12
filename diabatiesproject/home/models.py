@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Diabaties(models.Model):
+class Diabetes(models.Model):
     Pregnancies = models.IntegerField()
     Glucose = models.IntegerField()
     BloodPressure = models.IntegerField()
